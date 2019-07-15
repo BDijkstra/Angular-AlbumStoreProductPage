@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from '../product.service';
 import {Album} from '../album';
+import {ActivatedRoute} from "@angular/router";
+import {switchMap} from "rxjs/operators";
 
 @Component({
   selector: 'app-product-description',
@@ -10,7 +12,7 @@ import {Album} from '../album';
 export class ProductDescriptionComponent implements OnInit {
   albumInfo: Album;
 
-  constructor(private _productService: ProductService) {
+  constructor(private _productService: ProductService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
